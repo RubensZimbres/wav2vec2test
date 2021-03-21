@@ -23,14 +23,13 @@ model-index:
     metrics:
        - name: Test WER
          type: wer
-         value: 0.32
+         value: 32.71%
 ---
 
 
-# Wav2Vec2-Large-XLSR-53-{language} #TODO: replace language with your {language}, *e.g.* French
+# Wav2Vec2-Large-XLSR-53-pt
 
-Fine-tuned [facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) on {language} using the [Common Voice](https://huggingface.co/datasets/common_voice), ... and ... dataset{s}. #TODO: replace {language} with your language, *e.g.* French and eventually add more datasets that were used and eventually remove common voice if model was not trained on common voice
-When using this model, make sure that your speech input is sampled at 16kHz.
+Fine-tuned [facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) on Portuguese using the [Common Voice](https://huggingface.co/datasets/common_voice) dataset.
 
 ## Usage
 
@@ -71,7 +70,7 @@ print("Reference:", test_dataset["sentence"][:2])
 
 ## Evaluation
 
-The model can be evaluated as follows on the {language} test data of Common Voice.  # TODO: replace #TODO: replace language with your {language}, *e.g.* French
+The model can be evaluated as follows on the Portuguese test data of Common Voice.
 
 
 ```python
@@ -118,11 +117,11 @@ result = test_dataset.map(evaluate, batched=True, batch_size=8)
 print("WER: {:2f}".format(100 * wer.compute(predictions=result["pred_strings"], references=result["sentence"])))
 ```
 
-**Test Result**: XX.XX %  # TODO: write output of print here. IMPORTANT: Please remember to also replace {wer_result_on_test} at the top of with this value here. tags.
+**Test Result**: 32.71 %
 
 
 ## Training
 
-The Common Voice `train`, `validation`, and ... datasets were used for training as well as ... and ...  # TODO: adapt to state all the datasets that were used for training.
+The Common Voice `train`, `validation` datasets were used for training.
 
-The script used for training can be found [here](...) # TODO: fill in a link to your training script here. If you trained your model in a colab, simply fill in the link here. If you trained the model locally, it would be great if you could upload the training script on github and paste the link here.
+The script used for training can be found at: https://github.com/RubensZimbres/wav2vec2/blob/main/fine-tuning.py
