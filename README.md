@@ -1,7 +1,7 @@
 ---
-language: pt 
+language: pt
 datasets:
-- common_voice
+- common_voice 
 metrics:
 - wer
 tags:
@@ -11,7 +11,7 @@ tags:
 - xlsr-fine-tuning-week
 license: apache-2.0
 model-index:
-- name: modelo-voice
+- name: Rzimbres XLSR Wav2Vec2 Large 53  
   results:
   - task: 
       name: Speech Recognition
@@ -19,13 +19,13 @@ model-index:
     dataset:
       name: Common Voice pt
       type: common_voice
-      args: pt 
-    name: Rzimbres XLSR Wav2Vec2 Large 53
+      args: pt
     metrics:
        - name: Test WER
          type: wer
-         value: 0.32 
+         value: 0.32
 ---
+
 
 # Wav2Vec2-Large-XLSR-53-{language} #TODO: replace language with your {language}, *e.g.* French
 
