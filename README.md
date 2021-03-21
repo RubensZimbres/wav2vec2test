@@ -1,9 +1,7 @@
 ---
-language: {lang_id} #TODO: replace {lang_id} in your language code here. Make sure the code is one of the *ISO codes* of [this](https://huggingface.co/languages) site.
+language: pt 
 datasets:
-- common_voice #TODO: remove if you did not use the common voice dataset
-- TODO: add more datasets if you have used additional datasets. Make sure to use the exact same 
-dataset name as the one found [here](https://huggingface.co/datasets). If the dataset can not be found in the official datasets, just give it a new name
+- common_voice
 metrics:
 - wer
 tags:
@@ -13,19 +11,20 @@ tags:
 - xlsr-fine-tuning-week
 license: apache-2.0
 model-index:
-- name: {model_id} #TODO: replace {model_id} with your model id. The model id consists of {your_username}/{your_modelname}, *e.g.* `elgeish/wav2vec2-large-xlsr-53-arabic`
+- name: modelo-voice
   results:
   - task: 
       name: Speech Recognition
       type: automatic-speech-recognition
     dataset:
-      name: Common Voice {lang_id} #TODO: replace {lang_id} in your language code here. Make sure the code is one of the *ISO codes* of [this](https://huggingface.co/languages) site.
+      name: Common Voice pt
       type: common_voice
-      args: {lang_id} #TODO: replace {lang_id} in your language code here. Make sure the code is one of the *ISO codes* of [this](https://huggingface.co/languages) site.
+      args: pt 
+    name: Rzimbres XLSR Wav2Vec2 Large 53
     metrics:
        - name: Test WER
          type: wer
-         value: {wer_result_on_test} #TODO (IMPORTANT): replace {wer_result_on_test} with the WER error rate you achieved on the common_voice test set. It should be in the format XX.XX (don't add the % sign here). **Please** remember to fill out this value after you evaluated your model, so that your model appears on the leaderboard. If you fill out this model card before evaluating your model, please remember to edit the model card afterward to fill in your value
+         value: 0.32 
 ---
 
 # Wav2Vec2-Large-XLSR-53-{language} #TODO: replace language with your {language}, *e.g.* French
