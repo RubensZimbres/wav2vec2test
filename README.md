@@ -6,12 +6,17 @@ metrics:
 - wer
 tags:
 - audio
+- speech
+- wav2vec2
+- pt
+- apache-2.0
+- portuguese-speech-corpus
 - automatic-speech-recognition
 - speech
 - xlsr-fine-tuning-week
 license: apache-2.0
 model-index:
-- name: Rzimbres XLSR Wav2Vec2 Large 53  
+- name: Rubens XLSR Wav2Vec2 Large 53 Portuguese
   results:
   - task: 
       name: Speech Recognition
@@ -23,7 +28,7 @@ model-index:
     metrics:
        - name: Test WER
          type: wer
-         value: 32.71%
+         value: 31.43%
 ---
 
 
@@ -117,7 +122,7 @@ result = test_dataset.map(evaluate, batched=True, batch_size=8)
 print("WER: {:2f}".format(100 * wer.compute(predictions=result["pred_strings"], references=result["sentence"])))
 ```
 
-**Test Result**: 32.71 %
+**Test Result**: 31.43 %
 
 
 ## Training
