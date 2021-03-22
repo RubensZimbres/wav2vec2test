@@ -14,6 +14,7 @@ tags:
 - automatic-speech-recognition
 - speech
 - xlsr-fine-tuning-week
+- PyTorch
 license: apache-2.0
 model-index:
 - name: Rubens XLSR Wav2Vec2 Large 53 Portuguese
