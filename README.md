@@ -33,7 +33,7 @@ model-index:
 ---
 
 
-# Wav2Vec2-Large-XLSR-53-pt
+# Wav2Vec2-Large-XLSR-53-Portuguese
 
 Fine-tuned [facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) on Portuguese using the [Common Voice](https://huggingface.co/datasets/common_voice) dataset.
 
@@ -47,10 +47,10 @@ import torchaudio
 from datasets import load_dataset
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 
-test_dataset = load_dataset("common_voice", "{lang_id}", split="test[:2%]") #TODO: replace {lang_id} in your language code here. Make sure the code is one of the *ISO codes* of [this](https://huggingface.co/languages) site.
+test_dataset = load_dataset("common_voice", "pt", split="test[:2%]") 
 
-processor = Wav2Vec2Processor.from_pretrained("{model_id}") #TODO: replace {model_id} with your model id. The model id consists of {your_username}/{your_modelname}, *e.g.* `elgeish/wav2vec2-large-xlsr-53-arabic`
-model = Wav2Vec2ForCTC.from_pretrained("{model_id}") #TODO: replace {model_id} with your model id. The model id consists of {your_username}/{your_modelname}, *e.g.* `elgeish/wav2vec2-large-xlsr-53-arabic`
+processor = Wav2Vec2Processor.from_pretrained("Rubens/Wav2Vec2-Large-XLSR-53-Portuguese")
+model = Wav2Vec2ForCTC.from_pretrained("Rubens/Wav2Vec2-Large-XLSR-53-Portuguese")
 
 resampler = torchaudio.transforms.Resample(48_000, 16_000)
 
@@ -86,11 +86,11 @@ from datasets import load_dataset, load_metric
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 import re
 
-test_dataset = load_dataset("common_voice", "{lang_id}", split="test") #TODO: replace {lang_id} in your language code here. Make sure the code is one of the *ISO codes* of [this](https://huggingface.co/languages) site.
+test_dataset = load_dataset("common_voice", "pt", split="test")
 wer = load_metric("wer")
 
-processor = Wav2Vec2Processor.from_pretrained("{model_id}") #TODO: replace {model_id} with your model id. The model id consists of {your_username}/{your_modelname}, *e.g.* `elgeish/wav2vec2-large-xlsr-53-arabic`
-model = Wav2Vec2ForCTC.from_pretrained("{model_id}") #TODO: replace {model_id} with your model id. The model id consists of {your_username}/{your_modelname}, *e.g.* `elgeish/wav2vec2-large-xlsr-53-arabic`
+processor = Wav2Vec2Processor.from_pretrained("Rubens/Wav2Vec2-Large-XLSR-53-Portuguese")
+model = Wav2Vec2ForCTC.from_pretrained("Rubens/Wav2Vec2-Large-XLSR-53-Portuguese")
 model.to("cuda")
 
 chars_to_ignore_regex = '[\,\?\.\!\-\;\:\"\“]'  # TODO: adapt this list to include all special characters you removed from the data
