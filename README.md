@@ -29,7 +29,7 @@ model-index:
     metrics:
        - name: Test WER
          type: wer
-         value: 20.41%
+         value: 19.30%
 ---
 
 
@@ -123,7 +123,7 @@ result = test_dataset.map(evaluate, batched=True, batch_size=8)
 print("WER: {:2f}".format(100 * wer.compute(predictions=result["pred_strings"], references=result["sentence"])))
 ```
 
-**Test Result**: 20.41 %
+**Test Result**: 19.30 %
 
 
 ## Training
